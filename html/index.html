@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesse's Cheat Sheet</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Jesse's Cheat Sheet</h1>
+        <p>Your quick reference guide to HTML, CSS, and Python elements and attributes.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#basic-structure">Basic Structure</a></li>
+            <li><a href="#elements">Elements</a></li>
+            <li><a href="#attributes">Attributes</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#css">CSS Cheat Sheet</a></li>
+            <li><a href="#python">Python Cheat Sheet</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="basic-structure">
+            <h2>Basic Structure</h2>
+            <pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;Page Title&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;My First Heading&lt;/h1&gt;
+                    &lt;p&gt;My first paragraph.&lt;/p&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+            </pre>
+        </section>
+        <section id="elements">
+            <h2>Elements</h2>
+            <h3>Common Elements</h3>
+            <ul>
+                <li>&lt;h1&gt; to &lt;h6&gt; - Headings</li>
+                <li>&lt;p&gt; - Paragraph</li>
+                <li>&lt;a&gt; - Anchor (Link)</li>
+                <li>&lt;img&gt; - Image</li>
+                <li>&lt;div&gt; - Division</li>
+                <li>&lt;span&gt; - Span</li>
+            </ul>
+        </section>
+        <section id="attributes">
+            <h2>Attributes</h2>
+            <p>Attributes provide additional information about HTML elements. Common attributes include:</p>
+            <ul>
+                <li><strong>href</strong> - Specifies the URL for links.</li>
+                <li><strong>src</strong> - Specifies the source for images.</li>
+                <li><strong>alt</strong> - Provides alternative text for images.</li>
+                <li><strong>class</strong> - Specifies one or more class names for an element.</li>
+                <li><strong>id</strong> - Specifies a unique id for an element.</li>
+            </ul>
+        </section>
+        <section id="forms">
+            <h2>Forms</h2>
+            <pre>
+                &lt;form action="/submit" method="post"&gt;
+                    &lt;label for="name"&gt;Name:&lt;/label&gt;
+                    &lt;input type="text" id="name" name="name"&gt;
+                    &lt;input type="submit" value="Submit"&gt;
+                &lt;/form&gt;
+            </pre>
+        </section>
+        <section id="media">
+            <h2>Media</h2>
+            <pre>
+                &lt;img src="image.jpg" alt="Description"&gt;
+                &lt;audio controls&gt;
+                    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+                    Your browser does not support the audio tag.
+                &lt;/audio&gt;
+                &lt;video width="320" height="240" controls&gt;
+                    &lt;source src="movie.mp4" type="video/mp4"&gt;
+                    Your browser does not support the video tag.
+                &lt;/video&gt;
+            </pre>
+        </section>
+        <section id="css">
+            <h2>CSS Cheat Sheet</h2>
+            <h3>Selectors</h3>
+            <ul>
+                <li><code>element</code> - Selects all elements of that type (<code>p</code>, <code>h1</code>)</li>
+                <li><code>.class</code> - Selects all elements with that class</li>
+                <li><code>#id</code> - Selects the element with that id</li>
+                <li><code>*</code> - Universal selector (all elements)</li>
+                <li><code>element, element</code> - Grouping selectors</li>
+            </ul>
+            <h3>Properties</h3>
+            <ul>
+                <li><strong>color</strong>: Sets text color</li>
+                <li><strong>background-color</strong>: Sets background color</li>
+                <li><strong>font-size</strong>: Sets font size</li>
+                <li><strong>margin</strong>: Space outside element</li>
+                <li><strong>padding</strong>: Space inside element</li>
+                <li><strong>border</strong>: Sets border style</li>
+                <li><strong>display</strong>: <code>block</code>, <code>inline</code>, <code>flex</code>, <code>grid</code></li>
+            </ul>
+            <h3>Example</h3>
+            <pre>
+                body {
+                    background-color: #f0f0f0;
+                    color: #333;
+                }
+                .container {
+                    margin: 20px;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                }
+            </pre>
+        </section>
+
+        <section id="python">
+            <h2>Python Cheat Sheet</h2>
+            <h3>Basic Syntax</h3>
+            <pre>
+                print("Hello, World!")
+                # This is a comment
+            </pre>
+            <h3>Variables & Data Types</h3>
+            <ul>
+                <li><code>x = 5</code> <em>(int)</em></li>
+                <li><code>name = "Alice"</code> <em>(str)</em></li>
+                <li><code>pi = 3.14</code> <em>(float)</em></li>
+                <li><code>is_valid = True</code> <em>(bool)</em></li>
+                <li><code>my_list = [1, 2, 3]</code> <em>(list)</em></li>
+                <li><code>my_dict = {"a": 1, "b": 2}</code> <em>(dict)</em></li>
+            </ul>
+            <h3>Control Flow</h3>
+            <pre>
+                if x > 0:
+                    print("Positive")
+                elif x == 0:
+                    print("Zero")
+                else:
+                    print("Negative")
+            </pre>
+            <h3>Loops</h3>
+            <pre>
+                for i in range(5):
+                    print(i)
+                while x > 0:
+                    x -= 1
+            </pre>
+            <h3>Functions</h3>
+            <pre>
+                def greet(name):
+                    return f"Hello, {name}!"
+            </pre>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 HTML Cheat Sheet</p>
+    </footer>
+</body>
+</html>
