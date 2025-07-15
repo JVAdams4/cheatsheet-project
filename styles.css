@@ -1,4 +1,13 @@
+/* 
+    Main stylesheet for Jesse's Cheat Sheet
+    - Uses CSS variables for colors, fonts, radii, and shadows
+    - All design/layout is here for easy maintenance
+    - Responsive design included
+*/
+
+/* ===== CSS Variables ===== */
 :root {
+    /* Color palette */
     --color-primary: #0a75b8;
     --color-secondary: #49c93d;
     --color-bg-light: #f8f9fa;
@@ -8,6 +17,18 @@
     --color-header-text: #ffffff;
     --color-heading: #35424a;
     --color-code: #0033cc;
+
+    /* Font families */
+    --font-roboto: 'Roboto', Arial, sans-serif;
+    --font-open-sans: 'Open Sans', Arial, sans-serif;
+    --font-lora: 'Lora', serif;
+    --font-montserrat: 'Montserrat', Arial, sans-serif;
+
+    /* Font weights */
+    --weight-regular: 400;
+    --weight-bold: 700;
+
+    /* Radii and shadows */
     --border-radius-lg: 24px;
     --border-radius-md: 18px;
     --border-radius-sm: 8px;
@@ -16,16 +37,19 @@
     --box-shadow-sm: 0 2px 8px #cce5ff44 inset;
 }
 
+/* ===== Base Styles ===== */
 body {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: var(--font-open-sans);
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    /* Layered skeuomorphic background */
     background:
         repeating-linear-gradient(135deg, var(--color-bg-medium) 0px, var(--color-bg-medium) 8px, var(--color-bg-light) 8px, var(--color-bg-light) 16px),
         linear-gradient(120deg, var(--color-bg-accent) 0%, var(--color-bg-light) 60%, var(--color-bg-accent2) 100%);
 }
 
+/* ===== Header ===== */
 header {
     background: linear-gradient(90deg, var(--color-bg-medium) 0%, var(--color-primary) 100%);
     color: var(--color-header-text);
@@ -38,19 +62,53 @@ header {
 
 h1 {
     margin: 0;
-    font-family: 'Montserrat', var(--font-montserrat), Arial, sans-serif;
-    font-weight: 700;
+    font-family: var(--font-montserrat);
+    font-weight: var(--weight-bold);
     font-size: 2.5rem;
     letter-spacing: 2px;
     text-shadow: 0 2px 8px #0a75b844, 0 1px 0 #fff;
 }
 
-h2 {
-    color: #35424a;
-    font-family: 'Roboto', var(--font-roboto), Arial, sans-serif;
-    font-weight: 700;
+.subtitle {
+    font-family: var(--font-lora);
+    font-size: 1.2rem;
+    margin-top: 1rem;
 }
 
+.html { color: #ff6666; }
+.css { color: #0033cc; }
+.python { color: #49c93d; }
+
+/* ===== Navigation ===== */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+nav a {
+    font-family: var(--font-montserrat);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    background: var(--color-bg-medium);
+    padding: 8px 18px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+    background: var(--color-primary);
+    color: #fff;
+    outline: none;
+}
+
+/* ===== Section Styles ===== */
 section {
     margin: 32px auto;
     padding: 32px;
@@ -64,15 +122,41 @@ section {
     border: 1px solid var(--color-bg-medium);
 }
 
+/* ===== Headings ===== */
+h2 {
+    color: var(--color-heading);
+    font-family: var(--font-roboto);
+    font-weight: var(--weight-bold);
+}
+
+h3 {
+    font-family: var(--font-lora);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    margin-top: 1.2rem;
+}
+
+/* ===== Code & Preformatted Text ===== */
 code, pre {
     background: var(--color-bg-light);
     padding: 6px 10px;
     border-radius: var(--border-radius-sm);
     box-shadow: var(--box-shadow-sm);
-    font-family: 'Roboto Mono', 'Roboto', monospace;
+    font-family: 'Roboto Mono', var(--font-roboto), monospace;
     color: var(--color-code);
 }
 
+/* ===== Lists ===== */
+ul {
+    font-family: var(--font-open-sans);
+    font-size: 1.08rem;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* ===== Links ===== */
 a {
     color: var(--color-primary);
     text-decoration: none;
@@ -92,18 +176,20 @@ a:hover {
     border-bottom: 2px solid var(--color-secondary);
 }
 
+/* ===== Footer ===== */
 footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 24px 0 16px 0;
     background: linear-gradient(90deg, var(--color-bg-medium) 0%, var(--color-primary) 100%);
     color: var(--color-header-text);
-    border-top-left-radius: var(--border-radius-md);
-    border-top-right-radius: var(--border-radius-md);
+    border-top-left-radius: var(--border-radius-lg);
+    border-top-right-radius: var(--border-radius-lg);
     margin-top: 2rem;
     box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.12), 0 -1px 0 #fff inset;
     border-top: 2px solid var(--color-secondary);
 }
 
+/* ===== Responsive Design ===== */
 @media (max-width: 700px) {
     section {
         margin: 16px;

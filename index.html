@@ -6,7 +6,7 @@
   - Each section covers a core topic: HTML structure, elements, attributes, forms, media, CSS, Python
   - Responsive design for mobile screens
   - Footer with copyright
-  - To customize colors or fonts, edit the <style> block in <head>
+  - To customize colors or fonts, edit styles.css
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,165 +14,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jesse's Cheat Sheet</title>
-    <!-- Add Google Fonts and color styles from web-design-template -->
+    <!-- Google Fonts: loaded for use in CSS variables -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Lora:wght@400;700&family=Montserrat:wght@400;700&display=swap">
+    <!-- Main stylesheet: all design and layout is here -->
     <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --font-roboto: 'Roboto', sans-serif;
-            --font-open-sans: 'Open Sans', sans-serif;
-            --font-lora: 'Lora', serif;
-            --font-montserrat: 'Montserrat', sans-serif;
-            --weight-regular: 400;
-            --weight-bold: 700;
-        }
-        body {
-            background: linear-gradient(120deg, #f8f9fa 0%, #e3e6ee 100%);
-            font-family: var(--font-open-sans, Arial, sans-serif);
-            color: #222;
-        }
-        header {
-            background: linear-gradient(90deg, #e3e6ee 0%, #0a75b8 100%);
-            color: #fff;
-            padding: 2rem 1rem 1rem 1rem;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border-bottom: 1px solid #d1d5db;
-        }
-        h1 {
-            font-family: var(--font-montserrat);
-            font-weight: var(--weight-bold);
-            font-size: 2.5rem;
-            margin: 0;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 8px #0a75b844;
-        }
-        h2 {
-            font-family: var(--font-roboto);
-            font-weight: var(--weight-bold);
-            color: #35424a;
-            margin-top: 1.5rem;
-        }
-        h3 {
-            font-family: var(--font-lora);
-            font-weight: var(--weight-bold);
-            color: #0a75b8;
-            margin-top: 1.2rem;
-        }
-        nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 18px;
-            list-style: none;
-            padding: 0;
-            margin: 0 0 1.5rem 0;
-        }
-        nav a {
-            font-family: var(--font-montserrat);
-            font-weight: var(--weight-bold);
-            color: #0a75b8;
-            background: #e3e6ee;
-            padding: 8px 18px;
-            border-radius: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            transition: background 0.2s, color 0.2s;
-        }
-        nav a:hover {
-            background: #0a75b8;
-            color: #fff;
-        }
-        section {
-            margin: 24px auto;
-            padding: 24px;
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 4px 32px rgba(0,0,0,0.08);
-            max-width: 800px;
-        }
-        pre {
-            background: #eaeaea;
-            padding: 12px 16px;
-            border-radius: 8px;
-            font-size: 1.05rem;
-            font-family: var(--font-roboto);
-            color: #0033cc;
-            margin-bottom: 1.2rem;
-            overflow-x: auto;
-        }
-        code {
-            background: #cce5ff;
-            color: #0033cc;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: var(--font-montserrat);
-            font-size: 1.03em;
-        }
-        ul {
-            font-family: var(--font-open-sans);
-            font-size: 1.08rem;
-        }
-        li {
-            margin-bottom: 6px;
-        }
-        .color-demo {
-            display: flex;
-            gap: 18px;
-            margin: 1.5rem 0;
-            justify-content: center;
-        }
-        .color-box {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            border: 2px solid #e3e6ee;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 6px;
-        }
-        .red-light { background: #ffcccc; }
-        .red-medium { background: #ff6666; }
-        .red-dark { background: #cc0000; }
-        .blue-light { background: #cce5ff; }
-        .blue-medium { background: #66b3ff; }
-        .blue-dark { background: #0033cc; }
-        .green-light { background: #9ae7ac; }
-        .green-medium { background: #49c93d; }
-        .green-dark { background: #005f00; }
-        .silver { background: #c0c0c0; }
-        .color-label {
-            font-family: var(--font-montserrat);
-            font-size: 0.95rem;
-            color: #444;
-            text-align: center;
-            margin-top: 2px;
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #35424a;
-            color: #ffffff;
-            border-top-left-radius: 18px;
-            border-top-right-radius: 18px;
-            margin-top: 2rem;
-        }
-        @media (max-width: 700px) {
-            section {
-                padding: 12px;
-            }
-            .color-demo {
-                gap: 8px;
-            }
-        }
-    </style>
 </head>
 <body>
+    <!-- Header: main title and description -->
     <header>
         <h1>Jesse's Cheat Sheet</h1>
-        <p style="font-family: var(--font-lora); font-size:1.2rem;">Your quick reference guide to <span style="color:#ff6666;">HTML</span>, <span style="color:#0033cc;">CSS</span>, and <span style="color:#49c93d;">Python</span> elements and attributes.</p>
+        <p class="subtitle">
+            Your quick reference guide to <span class="html">HTML</span>, <span class="css">CSS</span>, and <span class="python">Python</span> elements and attributes.
+        </p>
     </header>
+    <!-- Navigation: quick links to each section -->
     <nav>
         <ul>
             <li><a href="#basic-structure">Basic Structure</a></li>
@@ -185,8 +40,10 @@
         </ul>
     </nav>
     <main>
+        <!-- HTML Structure Section -->
         <section id="basic-structure">
             <h2>Basic Structure</h2>
+            <!-- Example HTML boilerplate -->
             <pre>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -200,6 +57,7 @@
 &lt;/html&gt;
             </pre>
         </section>
+        <!-- Common HTML Elements Section -->
         <section id="elements">
             <h2>Elements</h2>
             <h3>Common Elements</h3>
@@ -212,6 +70,7 @@
                 <li><code>&lt;span&gt;</code> - Span</li>
             </ul>
         </section>
+        <!-- HTML Attributes Section -->
         <section id="attributes">
             <h2>Attributes</h2>
             <p>Attributes provide additional information about HTML elements. Common attributes include:</p>
@@ -223,6 +82,7 @@
                 <li><strong>id</strong> - Specifies a unique id for an element.</li>
             </ul>
         </section>
+        <!-- Forms Section -->
         <section id="forms">
             <h2>Forms</h2>
             <pre>
@@ -233,6 +93,7 @@
 &lt;/form&gt;
             </pre>
         </section>
+        <!-- Media Section -->
         <section id="media">
             <h2>Media</h2>
             <pre>
@@ -247,6 +108,7 @@
 &lt;/video&gt;
             </pre>
         </section>
+        <!-- CSS Cheat Sheet Section -->
         <section id="css">
             <h2>CSS Cheat Sheet</h2>
             <h3>Selectors</h3>
@@ -280,6 +142,7 @@ body {
 }
             </pre>
         </section>
+        <!-- Python Cheat Sheet Section -->
         <section id="python">
             <h2>Python Cheat Sheet</h2>
             <h3>Basic Syntax</h3>
@@ -319,8 +182,9 @@ def greet(name):
             </pre>
         </section>
     </main>
+    <!-- Footer: copyright and author link -->
     <footer>
-        <p>&copy; <a href="https://github.com/JVAdams4" target="_blank" rel="noopener noreferrer" alt="JVAdams4's GitHub Profile">JVAdams4's</a> Cheat Sheet</p>
+        <p>&copy; <a href="https://github.com/JVAdams4" target="_blank" rel="noopener noreferrer" aria-label="JVAdams4's GitHub Profile">JVAdams4's</a> Cheat Sheet</p>
     </footer>
 </body>
 </html>
